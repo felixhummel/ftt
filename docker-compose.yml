@@ -2,7 +2,7 @@ version: '2'
 services:
   app:
     image: felix/ftt
-    user: ${UID}:${GID}
+    user: ${FTT_UID}:${FTT_GID}
     build: .
     command: python manage.py runserver 0.0.0.0:8337
     working_dir: /opt/project
