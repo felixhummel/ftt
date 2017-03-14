@@ -1,0 +1,17 @@
+version: '2'
+services:
+  app:
+    image: felix/ftt
+    user: ${UID}:${GID}
+    build: .
+    command: python manage.py runserver 0.0.0.0:8337
+    working_dir: /opt/project
+    environment:
+      - PYTHONPATH=/opt/project
+      - HOME=/var/tmp/ftt
+      - TERM
+    ports:
+      - 127.0.0.1:8337:8337
+    volumes:
+      - ./:/opt/project
+      - /var/tmp/ftt:/var/tmp/ftt
