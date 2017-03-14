@@ -1,0 +1,20 @@
+{% load tz %}
+{% get_current_timezone as TIME_ZONE %}
+
+
+<dl>
+  <dt>Current Time Zone</dt>
+  <dd>{{ TIME_ZONE }}</dd>
+  {% timezone "Europe/Berlin" %}
+    <dt>Berlin time</dt>
+    <dd>{{ now }}</dd>
+  {% endtimezone %}
+  {% timezone None %}
+    <dt>Server time</dt>
+    <dd>{{ now }}</dd>
+  {% endtimezone %}
+
+</dl>
+
+
+
