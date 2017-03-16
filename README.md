@@ -17,3 +17,10 @@ I have simple needs:
 - neither PHP nor MySQL
 - don't do too much
 
+# Development
+
+```
+cp .env.sample .env
+vi .env
+docker-compose up
+```
