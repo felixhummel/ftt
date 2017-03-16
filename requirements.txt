@@ -1,5 +1,8 @@
 Django
+psycopg2
 ipython
 pytest-django
 # https://docs.djangoproject.com/en/1.10/topics/i18n/timezones/
 pytz
+# http://django-mptt.github.io/django-mptt/
+django-mptt
