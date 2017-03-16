@@ -21,5 +21,6 @@ services:
     volumes:
       - ./ftt/migrations/_postgres_init/1_create.sql:/docker-entrypoint-initdb.d/1_create.sql
       - ${COMPOSE_DATA}/postgres_data/:/var/lib/postgresql/data
+      - ${COMPOSE_DATA}:/var/tmp/ftt
     ports:
       - 127.0.0.1:5337:5432

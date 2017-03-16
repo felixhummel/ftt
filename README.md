@@ -25,5 +25,10 @@ vi .env
 docker-compose up
 ```
 
+Generate example entries:
+```
+cat ftt/migrations/_generators/random_entry.sql | dc run postgres psql -h postgres ftt ftt
+```
+
 # Trivia
 - http://acme.com/catalog/acme.html
