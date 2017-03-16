@@ -1,5 +1,7 @@
 shell:
 	docker-compose run app ./manage.py shell
+dbshell:
+	docker-compose exec postgres psql ftt ftt
 migrate:
 	docker-compose run app ./manage.py migrate
 makemigrations:
