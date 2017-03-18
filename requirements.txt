@@ -6,3 +6,5 @@ pytest-django
 pytz
 # http://django-mptt.github.io/django-mptt/
 django-mptt
+django-bootstrap3
+django_compressor
