@@ -89,5 +89,9 @@ STATICFILES_FINDERS = [
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+BOOTSTRAP3 = {
+    'jquery_url': '/static/vendor/jquery.min.js',
+    'base_url': '/static/vendor/bootstrap/3.3.7/',
+}
 
 LOGIN_REDIRECT_URL = 'home'
