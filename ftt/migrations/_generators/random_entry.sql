@@ -58,11 +58,14 @@ BEGIN
     SELECT id
     FROM auth_user
     WHERE username = 'admin');
-  project_id := (SELECT id
-                 FROM ftt_project
-                 WHERE name = 'acme');
   FOR entry_dt IN SELECT dt
                   FROM test_dates LOOP
+    project_id := (
+      SELECT id
+      FROM ftt_project
+      ORDER BY random()
+      LIMIT 1
+    );
     PERFORM insert_random_entry(entry_dt, project_id, user_id);
   END LOOP;
 END
