@@ -25,6 +25,9 @@ class Entry(models.Model):
     comment = models.TextField(null=True, blank=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
 
+    class Meta:
+        ordering = ['-start_dt']
+
     def __str__(self):
         start_day = self.start_dt.strftime('%m-%d')
         start_time = self.start_dt.strftime('%H:%M')
