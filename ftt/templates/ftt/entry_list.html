@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if object_list %}
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Start</th>
+        <th>End</th>
+        <th>Project</th>
+        <th>Comment</th>
+      </tr>
+      </thead>
+      <tbody>
+      {% for entry in object_list %}
+        <tr>
+          <td>{{ entry.start_dt }}</td>
+          <td>{{ entry.end_dt }}</td>
+          <td>{{ entry.project }}</td>
+          <td>{{ entry.comment }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  {% endif %}
+{% endblock %}

@@ -1,5 +1,8 @@
 from django.utils import timezone
+from django.views.generic import ListView
 from django.views.generic import TemplateView
+
+from ftt import models
 
 
 class HealthView(TemplateView):
@@ -9,3 +12,7 @@ class HealthView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['now'] = timezone.now()
         return context
+
+
+class Entries(ListView):
+    model = models.Entry
