@@ -12,7 +12,7 @@
 <body>
 {% block content %}{% endblock %}
 {% block js %}
-  {% bootstrap_javascript %}
+  {% bootstrap_javascript jquery=True %}
   {% bootstrap_messages %}
   {% block extrajs %}{% endblock %}
 {% endblock %}
