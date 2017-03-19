@@ -1,6 +1,8 @@
-{% load bootstrap3 %}
+{% load i18n bootstrap3 %}
+{# https://github.com/django/django/blob/master/django/contrib/admin/templates/admin/base.html #}
 <!DOCTYPE html>
-<html>
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}">
 <head>
   <meta charset="utf-8">
   <title>{% block title %}FIXME extend title block{% endblock %}</title>
