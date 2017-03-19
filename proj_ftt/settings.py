@@ -95,3 +95,8 @@ BOOTSTRAP3 = {
 }
 
 LOGIN_REDIRECT_URL = 'home'
+
+# https://docs.djangoproject.com/en/1.10/ref/settings/#date-format
+FORMAT_MODULE_PATH = [
+    'ftt.formats',
+]
