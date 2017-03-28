@@ -10,8 +10,8 @@
       <div class='col-md-5'>
         <div class="form-group">
           <label for="start_dt">start</label>
-          <div class='input-group date' id='start_dt_input_group'>
-            <input type='text' name='start_dt' class="form-control" id="start_dt"/>
+          <div id='start_dt_input_group' class='input-group date'>
+            <input type='text' id="start_dt" name='start_dt' value="{{ start_dt }}" class="form-control"/>
             <span class="input-group-addon">
             <span class="glyphicon glyphicon-calendar"></span>
           </span>
@@ -22,15 +22,15 @@
       <div class='col-md-5'>
         <div class="form-group">
           <label for="end_dt">end</label>
-          <div class='input-group date' id='end_dt_input_group'>
-            <input type='text' name='end_dt' class="form-control" id="end_dt"/>
+          <div id='end_dt_input_group' class='input-group date'>
+            <input type='text' id="end_dt" name='end_dt' value="{{ end_dt }}" class="form-control"/>
             <span class="input-group-addon">
             <span class="glyphicon glyphicon-calendar"></span>
           </span>
           </div>
         </div>
         <label for="comment">comment</label>
-        <textarea name="comment" class="form-control"></textarea>
+        <textarea id="comment" name="comment" class="form-control">{{ comment }}</textarea>
       </div>
     </div>
   </form>
