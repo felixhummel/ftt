@@ -1,4 +1,3 @@
-from django.conf import settings
 from django.db import models
 from django.utils.functional import cached_property
 from mptt.models import MPTTModel, TreeForeignKey
@@ -7,7 +6,6 @@ from mptt.models import MPTTModel, TreeForeignKey
 class Project(MPTTModel):
     name = models.CharField(max_length=128)
     parent = TreeForeignKey('self', null=True, blank=True, related_name='children', db_index=True)
-    group = models.ForeignKey('auth.Group')
 
     @cached_property
     def full_name(self):
@@ -23,7 +21,6 @@ class Entry(models.Model):
     end_dt = models.DateTimeField()
     project = models.ForeignKey('Project')
     comment = models.TextField(null=True, blank=True)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL)
 
     class Meta:
         ordering = ['-start_dt']
