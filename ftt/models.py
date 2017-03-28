@@ -30,3 +30,15 @@ class Entry(models.Model):
         start_time = self.start_dt.strftime('%H:%M')
         end_time = self.end_dt.strftime('%H:%M')
         return f'{start_day} {start_time}-{end_time} {self.comment}'
+
+
+class Clock(models.Model):
+    start_dt = models.DateTimeField()
+    end_dt = models.DateTimeField(null=True)
+    comment = models.TextField(null=True, blank=True)
+
+    @property
+    def delta(self):
+        if not self.end_dt:
+            return None
+        return self.end_dt - self.start_dt

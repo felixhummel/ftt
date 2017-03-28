@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^health$', views.HealthView.as_view(), name='health'),
     url(r'^login/$', auth_views.login, name='login'),
     url(r'^logout/$', auth_views.logout, name='logout'),
+    url(r'^clock$', views.ClockView.as_view(), name='clock_start'),
 ]
