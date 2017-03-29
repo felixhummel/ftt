@@ -19,4 +19,21 @@ $(function() {
   $end_dt.on("dp.change", function(e) {
     $start_dt.data("DateTimePicker").maxDate(e.date);
   });
+
+  $('#delete').click(function(e) {
+    $.ajax({
+      type: 'DELETE',
+      success: function(data) {
+        alert("Success: " + data);
+      },
+      error: function(data) {
+        if (data.status === 404) {
+          console.log('already clear. refresh form.');
+          window.location = window.location;
+        } else {
+          console.log('error deleting:', data);
+        }
+      }
+    });
+  })
 });

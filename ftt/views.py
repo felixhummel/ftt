@@ -1,4 +1,4 @@
-from django.shortcuts import redirect
+from django.shortcuts import redirect, get_object_or_404
 from django.utils import timezone
 from django.utils.dateparse import parse_datetime
 from django.views.generic import ListView
@@ -28,6 +28,7 @@ class ClockView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['now'] = timezone.now()
         try:
             clock = Clock.objects.get(id=self.clock_id)
             context['start_dt'] = clock.start_dt
@@ -50,3 +51,9 @@ class ClockView(TemplateView):
             clock.comment = request.POST['comment']
         clock.save()
         return redirect('clock_start')
+
+    def delete(self, request, *args, **kwargs):
+        clock = get_object_or_404(Clock, id=self.clock_id)
+        clock.delete()
+        return redirect('clock_start')
+
